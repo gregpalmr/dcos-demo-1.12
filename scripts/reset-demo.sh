@@ -31,6 +31,8 @@ echo
 echo " Installing dcos-enterprise-cli package "
 dcos package install --cli dcos-enterprise-cli --yes > /dev/null 2>&1
 
+echo " Installing Kubernetes CLI  package "
+dcos package install --cli kubernetes --yes > /dev/null 2>&1
 
 # Remove the Kubernetes API Server proxies
 echo
