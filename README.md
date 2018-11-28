@@ -1,6 +1,12 @@
 # dcos-demo-1.12
 Basic Enterprise DC/OS 1.12 Demo for mixed workloads including Spark, Kafka, and Kubernetes
 
+## USAGE
+
+    git clone https://github.com/gregpalmr/dcos-demo-1.12
+
+    cd dcos-demo-1.12
+
 ## 1. Setup
 
 Before starting the demo session, perform the following:
