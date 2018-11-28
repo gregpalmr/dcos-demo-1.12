@@ -33,7 +33,7 @@ echo
 bash $prep_script
 
 echo 
-echo " Starting the DC/OS Kubernetes Control Plane manager""
+echo " Starting the DC/OS Kubernetes Control Plane manager"
 echo
 dcos package install kubernetes --package-version=2.0.0-1.12.1 --yes
 
@@ -54,7 +54,7 @@ do
 done
 
 echo
-echo " Starting the first Kubernetes cluster \(K8s version 1.12.2\) "
+echo " Starting the first Kubernetes cluster - K8s version 1.12.2 "
 echo
 
 cat > /tmp/kubernetes-cluster1-options.json <<EOF
@@ -76,7 +76,7 @@ EOF
 dcos kubernetes cluster create --options=/tmp/kubernetes-cluster1-options.json --package-version=2.0.1-1.12.2 --yes
 
 echo
-echo " Starting the second Kubernetes cluster \(K8s version 1.12.1 with HA Mode\) "
+echo " Starting the second Kubernetes cluster - K8s version 1.12.1 with HA Mode "
 echo
 
 cat > /tmp/kubernetes-cluster2-options.json <<EOF
