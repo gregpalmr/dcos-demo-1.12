@@ -5,7 +5,9 @@ Basic Enterprise DC/OS 1.12 Demo for mixed workloads including Spark, Kafka, and
 
 Before starting the demo session, perform the following:
 
-### a. Spin up an Enterprise DC/OS cluster using the Mesosphere DC/OS Universal Installer (Terraform templates).
+### a. Launch an Enterprise DC/OS cluster
+
+Launch an Enterprise DC/OS cluster using the Mesosphere DC/OS Universal Installer. 
 
 Follow the instructions here: https://github.com/dcos/terraform-dcos
 
