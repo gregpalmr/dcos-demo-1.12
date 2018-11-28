@@ -54,7 +54,7 @@ do
 done
 
 echo
-echo " Starting the first Kubernetes cluster (K8s version 1.12.2) "
+echo " Starting the first Kubernetes cluster \(K8s version 1.12.2\) "
 echo
 
 cat > /tmp/kubernetes-cluster1-options.json <<EOF
