@@ -234,6 +234,8 @@ To reset the DC/OS cluster to a new state, run the script:
 
 ## TODO
 
+- Add a short demo of killing a Kubernetes process and watching DC/OS automatically restarting it.
+
 - Add an example of a pod running in a Kubernetes cluster making consumer/producer calls to the Kafka service running in native DC/OS.
 
 - Add a short prometheus demo.
