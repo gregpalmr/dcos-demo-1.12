@@ -116,7 +116,7 @@ Show the Catalog panel and show how pre-packages applications and services can b
 - Spark
 - Cassandra
 
-When Jenkins starts up, show the Jenkins Console and how customers can use the console or the Jenkins API to setup and manage build/test pipelines.
+When Jenkins starts up, show the Jenkins Console and discuss how customers can use the console or the Jenkins API to setup and manage build/test pipelines.
 
 When the Spark dispatcher starts up, show the Spark console and discuss how multiple Spark environments (with different versions) can be launced for different teams and how DC/OS access control lists can be used to keep the teams separate.  You can run a sample Spark job buy using the 'dcos spark run' command as shown in the file:
 
@@ -128,35 +128,35 @@ Discuss how Enterprise DC/OS supports "high density" kubernetes clusters and sup
 
 Use the DC/OS Dashboard Catalog panel to start the Kubernetes Control Plane Manager (the kubernetes package).
 
-- Package: kubernetes
-- Options:
-    Service Name: kubernetes
-    Service Account: kubernetes
-    Service Account Secret: kubernetes/sa
+    Package: kubernetes
+    Options:
+        Service Name: kubernetes
+        Service Account: kubernetes
+        Service Account Secret: kubernetes/sa
 
 Once the Kubernets control plane manager starts, use the DC/OS Dashboard Catalog panel to start two Kubernetes clusters. For the first Kubernetes cluster specify the service account user and secrets like this:
 
-- Package: kubernetes-cluster
-- Options:
-    Service Name: kubernetes-cluster1
-    Service Account: kubernetes-cluster1
-    Service Account Secret: kubernetes-cluster1/sa
-    Constrol Plane Placement: [["hostname", "UNIQUE"],["@zone", "GROUP_BY", "3"]]
-    Private Node Count: 1
-    Public Node Count: 1
+    Package: kubernetes-cluster
+    Options:
+        Service Name: kubernetes-cluster1
+        Service Account: kubernetes-cluster1
+        Service Account Secret: kubernetes-cluster1/sa
+        Constrol Plane Placement: [["hostname", "UNIQUE"],["@zone", "GROUP_BY", "3"]]
+        Private Node Count: 1
+        Public Node Count: 1
 
 Also, start a second Kubernetes cluster with a different name, service account user and a different 
 
-- Package: kubernetes-cluster
-- Options:
-    Service Name: kubernetes-cluster2
-    Service Account: kubernetes-cluster2
-    Service Account Secret: kubernetes-cluster2/sa
-    High Availability: TRUE
-    Service Cidr: 10.101.0.0/16
-    Constrol Plane Placement: [["hostname", "UNIQUE"],["@zone", "GROUP_BY", "3"]]
-    Private Node Count: 1
-    Public Node Count: 0
+    Package: kubernetes-cluster
+    Options:
+        Service Name: kubernetes-cluster2
+        Service Account: kubernetes-cluster2
+        Service Account Secret: kubernetes-cluster2/sa
+        High Availability: TRUE
+        Service Cidr: 10.101.0.0/16
+        Constrol Plane Placement: [["hostname", "UNIQUE"],["@zone", "GROUP_BY", "3"]]
+        Private Node Count: 1
+        Public Node Count: 0
 
 ### d. Start the Kubernetes clusters' API Server proxy services
 
