@@ -139,6 +139,7 @@ Use the DC/OS Dashboard Catalog panel to start the Kubernetes Control Plane Mana
 Once the Kubernets control plane manager starts, use the DC/OS Dashboard Catalog panel to start two Kubernetes clusters. For the first Kubernetes cluster specify the service account user and secrets like this:
 
     Package: kubernetes-cluster
+    Version: 2.0.1-1.12.2 (the latest version)
     Options:
         Service Name: kubernetes-cluster1
         Service Account: kubernetes-cluster1
@@ -150,6 +151,7 @@ Once the Kubernets control plane manager starts, use the DC/OS Dashboard Catalog
 Also, start a second Kubernetes cluster with a different name, service account user and a different 
 
     Package: kubernetes-cluster
+    Version: 2.0.0-1.12.1 (one version older than the latest)
     Options:
         Service Name: kubernetes-cluster2
         Service Account: kubernetes-cluster2
@@ -203,6 +205,22 @@ Some example kubectl commands can be found in:
 If you want to demonstrate installing Helm and a Heml Chart, you can experiment with the commands found in:
 
     examples/helm-examples.txt
+
+### g. Demonstrate upgrading a Kubernetes cluster
+
+Discuss how Enterprise DC/OS automates the process of upgrading, in a rolling fashion, the upgrading of Kubernetes clusters without disrupting the pods running on the Kubernetes cluster. Also, discuss how DC/OS has a built-in CLI command that can backup the Kubernetes cluster meta-data (from the etcd daemons) so that a Kubernetes cluster's state can be restored from a backup in the case of a failure or building a new Kubernetes cluster.
+
+Use the DC/OS CLI to upgrade the second Kubernetes cluster from 1.12.1 to 1.12.2. The upgrade commands can be found in an example file at:
+
+    examples/kubernetes-upgrade-example.txt
+
+Use the following commands to upgrade the second Kubernetes cluster:
+
+    dcos package install kubernetes --cli --package-version=2.0.1-1.12.2
+
+    dcos kubernetes cluster update  --cluster-name=kubernetes-cluster2 --package-version=2.0.1-1.12.2
+
+Show the DC/OS Dashboard Service panel and how the Kubernetes-cluster2 processes are restarting in a rolling fashion.
 
 ## 3. Summarize what you demonstrated
 
