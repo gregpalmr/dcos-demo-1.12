@@ -214,9 +214,7 @@ Use the DC/OS CLI to upgrade the second Kubernetes cluster from 1.12.1 to 1.12.2
 
     examples/kubernetes-upgrade-example.txt
 
-Use the following commands to upgrade the second Kubernetes cluster:
-
-    dcos package install kubernetes --cli --package-version=2.0.1-1.12.2
+Use the following command to upgrade the second Kubernetes cluster:
 
     dcos kubernetes cluster update  --cluster-name=kubernetes-cluster2 --package-version=2.0.1-1.12.2
 
