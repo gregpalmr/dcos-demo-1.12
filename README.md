@@ -214,4 +214,13 @@ To reset the DC/OS cluster to a new state, run the script:
 
     scripts/reset-demo.sh
 
+## TODO
+
+- Add an example of a pod running in a Kubernetes cluster making consumer/producer calls to the Kafka service running in native DC/OS.
+
+- Add a short prometheus demo.
+
+- Add a Helm chart demo - installing a chart into one of the Kubernetes clusters.
+
+- Add an ingress demo with one of the Kubernetes clusters.
 
