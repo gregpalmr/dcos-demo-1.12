@@ -1,4 +1,7 @@
 
-# Spark Job
+# Run a Spark Job
+
+dcos package install --cli spark --yes
+
 dcos spark run --submit-args='--conf spark.mesos.coarse=true --conf spark.cores.max=4 --conf spark.executor.memory=2g --driver-cores 1 --driver-memory 1g --class org.apache.spark.examples.SparkPi https://downloads.mesosphere.com/spark/assets/spark-examples_2.10-1.4.0-SNAPSHOT.jar 30'
 
