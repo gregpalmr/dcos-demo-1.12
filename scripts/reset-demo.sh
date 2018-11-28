@@ -149,6 +149,12 @@ dcos security secrets delete kubernetes-cluster2/service_account_public_key
 dcos security org service-accounts delete kubernetes-cluster2 > /dev/null 2>&1
 
 echo
+echo " Removing the Kubenetes Control Plane Manager service account user"
+echo
+dcos security secrets delete kubernetes/sa
+dcos security org service-accounts delete kubernetes > /dev/null 2>&1
+
+echo
 echo " Removing Cassandra"
 dcos package uninstall cassandra --yes
 
