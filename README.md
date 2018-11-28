@@ -19,7 +19,7 @@ Make sure you include at least the following:
 - 7 DC/OS Private Agent Nodes
 - 2 DC/OS Public Agent Nodes
 
-Make sure you deploy at least 4 CPU cores and 16MB of memory for the private and public agent nodes.
+Also, make sure you deploy at least 4 CPU cores and 16MB of memory for the private and public agent nodes.
 
 ### b. Login to the Enterprise DC/OS Dashboard
 
@@ -33,12 +33,18 @@ Then run the cluster setup command:
 
     dcos cluster setup https://<master node public ip address>
 
-    NOTE: Make sure you use an HTTPS URL in the cluster setup command and not an HTTP URL.
+NOTE: Make sure you use an HTTPS URL in the cluster setup command and not an HTTP URL.
 
-### d. To support launching Kubernetes clusters with DC/OS service accounts and SSL certificates, run the prep script that creates the base service account users and their signed certificates using the DC/OS certificate authority (CA).
+### d. Prep the Cluster
+
+To support launching Kubernetes clusters with DC/OS service accounts and SSL certificates, run the prep script that creates the base service account users and their signed certificates using the DC/OS certificate authority (CA).
 
     scripts/prep-cluster.sh
 
+This script also attempts to install an Enteprise DC/OS license key if it finds the file:
 
+    $HOME/scripts/license.txt
+
+This is optional and is only needed if the license key used with the Terraform templates do not enable enough DC/OS nodes needed for this demo environment.
 
 
