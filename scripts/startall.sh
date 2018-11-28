@@ -6,12 +6,12 @@
 #
 
 # Get path to the Prep Cluster script
-prep_script=$(find . |grep prep-demo.sh)
+prep_script=$(find . |grep prep-cluster.sh)
 
 if [ "$prep_script" == "" ]
 then
     echo ""
-    echo " ERROR: Cannot find the prep-demo.sh script. Exiting."
+    echo " ERROR: Cannot find the prep-cluster.sh script. Exiting."
     echo
     exit 1
 fi
