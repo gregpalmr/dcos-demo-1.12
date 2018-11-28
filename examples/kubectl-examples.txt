@@ -1,0 +1,9 @@
+Use the kubectl command to run some kubectl commands:
+    $ kubectl cluster-info
+    $ kubectl get node
+    $ kubectl run my-nginx --image=nginx --replicas=2 --port=80
+    $ kubectl get pods
+    $ kubectl get deployment
+    $ kubectl scale deployment my-nginx --replicas=3
+    $ kubectl get pods
+    $ kubectl delete deployment my-nginx

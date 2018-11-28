@@ -1,0 +1,15 @@
+
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+
+helm init
+
+helm version
+
+helm repo add dlc https://dcos-labs.github.io/charts/
+
+helm repo update
+
+helm search
+
+helm install --name my-lamp-stack stable/lamp
+
