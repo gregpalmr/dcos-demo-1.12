@@ -23,7 +23,7 @@ Make sure you include at least the following:
 
 Also, make sure you deploy at least 4 CPU cores and 16MB of memory for the private and public agent nodes.
 
-Finally, if you want to demonstrate Enterprise DC/OS's multiple region or availability zone capabilities, modify the Terraform templates (main.tf) to include multiple AZ and such.
+Finally, if you want to demonstrate Enterprise DC/OS's multiple region or availability zone capabilities, modify the Terraform templates (main.tf) to include multiple AZs and such.
 
 ### b. Login to the Enterprise DC/OS Dashboard
 
