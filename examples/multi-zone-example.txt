@@ -1,0 +1,4 @@
+
+Placement Constraint:
+
+[["hostname", "UNIQUE"],["@zone", "GROUP_BY", "3"]]
