@@ -1,5 +1,10 @@
 Use the kubectl command to run some kubectl commands:
 
+    To access the dashboard run:
+
+    $ kubectl proxy &
+    Browser: http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
     $ kubectl config get-contexts
     $ kubectl config use-context kubernetes-cluster1
     $ kubectl config use-context kubernetes-cluster2
