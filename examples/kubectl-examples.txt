@@ -1,4 +1,9 @@
 Use the kubectl command to run some kubectl commands:
+
+    $ kubectl config get-contexts
+    $ kubectl config use-context kubernetes-cluster1
+    $ kubectl config use-context kubernetes-cluster2
+
     $ kubectl cluster-info
     $ kubectl get node
     $ kubectl run my-nginx --image=nginx --replicas=2 --port=80
