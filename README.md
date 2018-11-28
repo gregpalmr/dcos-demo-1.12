@@ -101,6 +101,8 @@ This is optional and is only needed if the license key used with the Terraform t
 
 ### a. DC/OS Overview
 
+Before starting the demo, discuss with the audience what you are going to demonstrate in the next few minutes.
+
 Show the main DC/OS Dashboard and talk about how DC/OS pools resources (CPU, GPU, Memory and Disk) and allocates them dynamically to services that are launched from the Catalog or Services panel.
 
 Show the Nodes panel and show the servers that are being managed by DC/OS.
