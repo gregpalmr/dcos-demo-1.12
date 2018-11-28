@@ -49,6 +49,40 @@ Once the DC/OS CLI is installed, install some sub-commands:
 
     dcos package install dcos-enterprise-cli --yes
 
+Install the kubectl command line program by following the instructions here:
+
+    https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+Or use these instructions to install the kubectl program.
+
+For Macs with brew installed the command is
+
+    brew install kubectl
+
+For CoreOS the commands are:
+
+    curl -O https://storage.googleapis.com/kubernetes-release/release/v1.12.1/bin/linux/amd64/kubectl
+    chmod +x kubectl
+    sudo mkdir -p /opt/bin
+    sudo mv kubectl /opt/bin/kubectl
+
+For Red Red or CentOS the commands are:
+
+    curl -O https://storage.googleapis.com/kubernetes-release/release/v1.12.1/bin/linux/amd64/kubectl
+    chmod +x kubectl
+    sudo mkdir -p /usr/local/bin
+    sudo mv kubectl /usr/local/bin/kubectl
+
+For Ubuntu the commands are:
+
+    sudo apt-get update && sudo apt-get install -y apt-transport-https
+    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    sudo touch /etc/apt/sources.list.d/kubernetes.list 
+    echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+    sudo apt-get update
+    sudo apt-get install -y kubectl
+
+
 ### d. Prep the Cluster
 
 To support launching Kubernetes clusters with DC/OS service accounts and SSL certificates, run the prep script that creates the base service account users and their signed certificates using the DC/OS certificate authority (CA).
