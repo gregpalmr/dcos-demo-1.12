@@ -76,7 +76,7 @@ EOF
 dcos kubernetes cluster create --options=/tmp/kubernetes-cluster1-options.json --package-version=2.0.1-1.12.2 --yes
 
 echo
-echo " Starting the second Kubernetes cluster (K8s version 1.12.1 with HA Mode) "
+echo " Starting the second Kubernetes cluster \(K8s version 1.12.1 with HA Mode\) "
 echo
 
 cat > /tmp/kubernetes-cluster2-options.json <<EOF
