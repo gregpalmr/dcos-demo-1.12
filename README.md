@@ -29,7 +29,22 @@ Make sure you include at least the following:
 
 Also, make sure you deploy at least 4 CPU cores and 16MB of memory for the private and public agent nodes.
 
-Finally, if you want to demonstrate Enterprise DC/OS's multiple region or availability zone capabilities, modify the Terraform templates (main.tf) to include multiple AZs and such.
+If you want to demonstrate Enterprise DC/OS's multiple region or availability zone capabilities, modify the Terraform templates (main.tf) to include multiple AZs and such.
+
+Finally, to be support accessing the Kubernetes API Server proxies on the public agent nodes, use the following commands to add the InBound security rules to the Security Group created by your Terraform templates. CLUSTER_NAME is the name you provided on line 19 of your main.tf template.
+
+    CLUSTER_NAME=mycluster1
+
+    SG_ID=$(aws ec2 describe-security-groups --region us-east-1 --output table --filters Name=group-name,Values=dcos-${CLUSTER_NAME}-public-agents-lb-firewall | grep GroupId | awk '{print $4}')
+
+    echo $SG_ID
+
+    aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 6443 --cidr 0.0.0.0/0
+    aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 6444 --cidr 0.0.0.0/0
+    aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 10000-10099 --cidr 0.0.0.0/0
+    
+
+
 
 ### b. Login to the Enterprise DC/OS Dashboard
 
