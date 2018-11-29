@@ -42,6 +42,14 @@ Finally, to be support accessing the Kubernetes API Server proxies on the public
     aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 6443 --cidr 0.0.0.0/0
     aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 6444 --cidr 0.0.0.0/0
     aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 10000-10099 --cidr 0.0.0.0/0
+
+    SG_ID=$(aws ec2 describe-security-groups --region us-east-1 --output table --filters Name=group-name,Values=dcos-${CLUSTER_NAME}-admin-firewall | grep GroupId | awk '{print $4}')
+
+    echo $SG_ID
+
+    aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 6443 --cidr 0.0.0.0/0
+    aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 6444 --cidr 0.0.0.0/0
+    aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port 10000-10099 --cidr 0.0.0.0/0
     
 
 
